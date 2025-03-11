@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+<body>
+<div id="loader" onclick="hideLoader()">
+    <h1 class="name">An&</h1>
+    <div id="arrow">
+        <img src="images/rocket-svgrepo-com.svg" class="icon">
+    </div>
+</div>
+<section id="content">
+<header class="header">
+    <div class="container">
+        <div class="header__content">
+            <div class="header__left">
+                <a href="mailto:aplanand2001@gmail.com" class="header__link">
+                    <img src="./Assets/images/anand.gif" class="header__left-image">
+                </a>
+            </div>
+
+            <!-- Menu Icon -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <img src="./Assets/images/three-line-horizontal-svgrepo-com.svg" class="header__menu-icon">
+            </div>
+
+            <!-- Menu -->
+            <ul class="header__right">
+                <li class="header__right-text"><a href="#section1" class="header__link">Services</a></li>
+                <li class="header__right-text"><a href="#section2" class="header__link">Skills</a></li>
+                <li class="header__right-text"><a href="#section3" class="header__link">Work</a></li>
+                <li class="header__right-text"><a href="#section4" class="header__link">Career</a></li>
+                <li class="header__right-text"><a href="#section5" class="header__link">Contact</a></li>
+            </ul>
+
+            <a href="mailto:aplanand2001@gmail.com" class="btn--primary hire" target="_blank">Hire Me</a>
+        </div>
+    </div>
+</header>
+<section class="portfolio" id="aboutsection">
+<div class="container">
+    <div class="portfolio__content">
+        <div class="portfolio__left-cotent">
+            <h3 class="portfolio__left-heading">
+                I am Anand
+            </h3>
+            <h1 class="portfolio__left-about">
+                Web Developer
+            </h1>
+            <p class="portfolio__left-description">
+                As a Web Developer, I turn ideas into beautifully crafted, high-performing websites and applications.
+            </p>
+            <a href="Anand.L (1).pdf" class="btn--primary" download="Anand" target="_blank">Download CV</a>
+        </div>
+        <div class="portfolio__right-image">
+            <img src="images/anand-dt-img.png" class="portfolio__right-profile">
+        </div>
+    </div>
+</div>
+</section>
+<section class="experience">
+<div class="container">
+    <div class="experience__content">
+        <div class="experience__content-years">
+            <h3 data-target="1.5">0</h3>
+            <p>years of experience</p>
+        </div>
+        <div class="experience__content-years">
+            <h3 data-target="15">0</h3>
+            <p>Project Completed</p>
+        </div>
+        <div class="experience__content-years">
+            <h3 data-target="10">0</h3>
+            <p>technological designs</p>
+        </div>
+    </div>
+    </div>
+    </section>
+<section class="services" id="section1">
+        <div class="container">
+            <h1 class="services__heading">My Quality Services</h1>
+            <p class="services__description">
+                I specialize in Front-End Development, creating modern, responsive, and user-friendly web interfaces that enhance user experience and engagement. My focus is on clean design, high performance, and seamless functionality across all devices.
+            </p>
+            <div class="services__right-slider">
+                <div class="row-content-one">
+                    
+                    <img src="images/service-1.png" class="services__right-image">
+                </div>
+                <div class="row-content-two">
+                    <div class="swiper testSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide swiper-content">
+                                    <img src="images/pngwing.com (1).png" class="services__swiper-icon">
+                                    <h3 class="services__swiper-heading">UI/UX Development</h3>
+                                    <div class="services__swiper-content">
+                                        <span class="services__description-icon"></span><p class="services__right-description">Pixel-perfect, modern, and intuitive designs</p>
+                                        <span class="services__description-icon"></span><p class="services__right-description">Mobile-first and fully responsive layouts</p>
+                                        <span class="services__description-icon"></span><p
+                                        class="services__right-description">Smooth animations and interactive elements</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-content">
+                                <img src="images/tool.png" class="services__swiper-icon">
+                                <h3 class="services__swiper-heading">Technologies & Tools</h3>
+                                <div class="services__swiper-content">
+                                    <span class="services__description-icon"></span><p class="services__right-description">HTML, CSS (Tailwind, Bootstrap)</p>
+                                    <span class="services__description-icon"></span><p class="services__right-description">Java Script</p>
+                                    
+                                
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-content">
+                            <img src="images/settings.png" class="services__swiper-icon">
+                            <h3 class="services__swiper-heading">Continuous Improvement & Support</h3>
+                            <div class="services__swiper-content">
+                                <span class="services__description-icon"></span><p class="services__right-description">Debugging and troubleshooting issues</p>
+                                <span class="services__description-icon"></span><p class="services__right-description">Accessibility best practices (WCAG compliance)</p>
+                                <span class="services__description-icon"></span><p
+                                class="services__right-description">Regular updates and performance enhancements</p>
+                            
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-content">
+                        <img src="images/pngwing.com (1).png" class="services__swiper-icon">
+                        <h3 class="services__swiper-heading">UI/UX Development</h3>
+                        <div class="services__swiper-content">
+                            <span class="services__description-icon"></span><p class="services__right-description">Pixel-perfect, modern, and intuitive designs</p>
+                            <span class="services__description-icon"></span><p class="services__right-description">Mobile-first and fully responsive layouts</p>
+                            <span class="services__description-icon"></span><p
+                            class="services__right-description">Smooth animations and interactive elements</p>
+                        
+                    </div>
+                </div>
+                            
+    
+    
+                        </div>
+                        
+                    </div>
+                </div>
+    
+            </div>
+
+        </div>
+    </section>
+<section class="skills" id="section2">
+<div class="container">
+    <h1 class="services__heading">My Skills
+        
+    </h1>
+    <p class="services__description">
+        I bring your ideas and vision to life, creating a unique web project that captivates and inspires both you and your customers.
+    </p>
+    <div class="skills__cards">
+        <div class="skills__card">
+            <span class="close"></span>
+            <span class="arrow"></span>
+            <div class="skills__card-content">
+            <h2>HTML</h2>
+            <div class="pic"><img src="images/html-5-logo-svgrepo-com.svg"></div>
+        
+            <div class="desc">I have a strong foundation in HTML5, the backbone of modern web development. With a deep understanding of semantic markup, I ensure that every website I build is well-structured, accessible, and SEO-friendly.</div>
+        
+            </div>
+            
+        </div>
+        <div class="skills__card">
+            <span class="close"></span>
+            <span class="arrow"></span>
+            <div class="skills__card-content">
+            <h2>CSS</h2>
+            <div class="pic"><img src="images/css-3-svgrepo-com.svg"></div>
+        
+            <div class="desc">I have extensive experience with CSS3, allowing me to craft visually appealing, responsive, and interactive web designs. I focus on writing clean, maintainable styles that enhance user experience while ensuring cross-browser compatibility.</div>
+        
+            </div>
+            
+        </div>
+        <div class="skills__card">
+            <span class="close"></span>
+            <span class="arrow"></span>
+            <div class="skills__card-content">
+            <h2>Java Script</h2>
+            <div class="pic"><img src="images/Js-icon.svg"></div>
+        
+            <div class="desc">JavaScript (ES6+), enabling me to build dynamic, interactive, and high-performing web applications. I specialize in writing clean, efficient, and maintainable code that enhances user experience and functionality.</div>
+        
+            </div>
+            
+        </div>
+        <div class="skills__card">
+            <span class="close"></span>
+            <span class="arrow"></span>
+            <div class="skills__card-content">
+            <h2>Python</h2>
+            <div class="pic"><img src="images/python-svgrepo-com.svg"></div>
+        
+            <div class="desc">I have a foundational understanding of Python, allowing me to work with basic scripting, automation, and backend development. While I specialize in front-end technologies, I use Python for problem-solving, backend logic, and data handling.</div>
+        
+            </div>
+            
+        </div>
+        <div class="skills__card">
+            <span class="close"></span>
+            <span class="arrow"></span>
+            <div class="skills__card-content">
+            <h2>Figma</h2>
+            <div class="pic"><img src="images/pngwing.com (1).png"></div>
+        
+            <div class="desc">I have a solid understanding of Figma, which I use for designing and prototyping modern, user-friendly web interfaces. It helps me bridge the gap between design and development, ensuring smooth implementation of UI/UX concepts.</div>
+        
+            </div>
+            
+        </div>
+        <div class="skills__card">
+            <span class="close"></span>
+            <span class="arrow"></span>
+            <div class="skills__card-content">
+            <h2>Photoshop</h2>
+            <div class="pic"><img src="images/photoshop-svgrepo-com.svg"></div>
+        
+            <div class="desc">I have a solid understanding of Adobe Photoshop, which I use for designing and enhancing web graphics, UI elements, and visual assets. It helps me create polished, professional designs that elevate the user experience.</div>
+        
+            </div>
+        
+        </div>
+        </div>
+
+</div>
+</section>
+<section class="work" id="section3">
+<div class="container">
+    <div class="work__heading">
+
+        <h1 class="services__heading">About My Work</h1>
+        <p>Adjust your design through a wide range of theme options in the<br>
+            development and instantly.</p>
+    </div>
+    <div class="work__cards">
+        <div class="work__card">
+            <div class="work__card-image">
+                <img src="images/1.png" alt="1">
+            </div>
+            <div class="work__card-content">
+                <h4>Teamwork</h4>
+                <p>Modern and unique design practically point of view, it risks not meeting the huge
+                    expectations
+                </p>
+            </div>
+        </div>
+        <div class="work__card">
+            <div class="work__card-image">
+                <img src="images/2.png" alt="1">
+            </div>
+            <div class="work__card-content">
+                <h4>Networking</h4>
+                <p>Using year-over-year design and latest techs, we will ensure that your new website will be
+                    visible
+
+
+                </p>
+            </div>
+        </div>
+        <div class="work__card">
+            <div class="work__card-image">
+                <img src="images/3.png" alt="1">
+            </div>
+            <div class="work__card-content">
+                <h4>Exposure</h4>
+                <p>Brand strategy tools are made size for marketing teams taken possession of global strategy
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+<section class="career" id="section4">
+<div class="container">
+    <div class="career__content">
+        <div class="career__content-left">
+            <div class="career__heading">
+                <img src="images/graduate-svgrepo-com.svg" class="career__heading-image">
+            <h1 class="service__heading">
+                My Education
+            </h1>
+        </div>
+        <div class="career__cards">
+            <h3>2019-2023</h4>
+                <h4>Electronics and Communication , NEC</h4>  
+                <h6>Kovilpatti</h6> 
+        </div>
+    </div>
+    <div class="career__content-left">
+        <div class="career__heading">
+            <img src="images/quality-certificate-award-svgrepo-com.svg" class="career__heading-image">
+        <h1 class="service__heading">
+            My Experience
+        </h1>
+    </div>
+    <div class="career__cards">
+        <h3>2023 - Present</h4>
+            <h4>Blueoshan</h4>  
+            <h6>Chennai</h6> 
+    </div>
+</div>
+</div>
+</section>
+<section class="contact" id="section5">
+<div class="container">
+    <h1 class="services__heading">Lets Work Together</h1>
+    <div class="contact__cards">
+        <div class="contact__card">
+            <img src="images/phone-call-svgrepo-com.svg" class="contact__card-image">
+            <h3 class="contact__card-title">
+                Phone number:
+            </h3>
+            <a href="#" class="conatct__card-link">
+                9361010661
+            </a>
+        </div>
+        <div class="contact__card">
+            <img src="images/mail-open-svgrepo-com.svg" class="contact__card-image">
+            <h3 class="contact__card-title">
+                Email:
+            </h3>
+            <a href="mailto:aplanand2001@gmail.com" class="conatct__card-link" target="_blank">
+                aplanand2001@gmail.com
+            </a>
+        </div>
+        <div class="contact__card">
+            <img src="images/linkedin-svgrepo-com.svg" class="contact__card-image">
+            <h3 class="contact__card-title">
+                Linkedin:
+            </h3>
+            <a href="https://www.linkedin.com/in/anandlenin10/" class="conatct__card-link" target="_blank">
+                Anand Lenin on Linkedin
+            </a>
+        </div>
+        
+        
+    </div>
+</div>
+</section>
+<footer class="footer">
+<div class="container">
+    <ul class="footer__content">
+        <li class="footer__content-text"><a href="#aboutsection" class="footer__content-link">About</a></li>
+        <li class="footer__content-text"><a href="#" class="footer__content-link">Services</a></li>
+        <li class="footer__content-text"><a href="#" class="footer__content-link">Skills</a></li>
+        <li class="footer__content-text"><a href="#" class="footer__content-link">Contact</a></li>
+
+    </ul>
+    <h4 class="footer__copyrights">© 2025 All rights reserved</h4>
+</div>
+</footer>
+<div class="btn">
+<button onclick="toggleDarkMode()" class="dark__mode-btn"><img src="images/nightmode-svgrepo-com.svg" id="nightMode"></button>
+</div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        var img = document.getElementById('nightMode');
+        if (document.body.classList.contains("dark-mode")){
+            img.src ="images/light-svgrepo-com.svg";
+        } else{
+            img.src ="images/nightmode-svgrepo-com.svg";
+        }
+    }
+    function toggleMenu() {
+            const menu = document.querySelector(".header__right");
+            menu.classList.toggle("active");
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+            const menu = document.querySelector(".header__right");
+            const menuIcon = document.querySelector(".menu-icon");
+
+            if (menu.classList.contains("active") && !menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                menu.classList.remove("active");
+            }
+        });
+
+function equalizeSwiperSlides() {
+    let slides = document.querySelectorAll(".swiper-slide");
+    let maxHeight = 0;
+
+    // Reset heights before calculating
+    slides.forEach(slide => {
+        slide.style.height = "auto"; 
+    });
+
+    // Find the max height
+    slides.forEach(slide => {
+        maxHeight = Math.max(maxHeight, slide.offsetHeight);
+    });
+
+    // Apply max height to all slides
+    slides.forEach(slide => {
+        slide.style.height = maxHeight + "px";
+    });
+}
+
+// Run function after Swiper initializes
+document.addEventListener("DOMContentLoaded", equalizeSwiperSlides);
+window.addEventListener("resize", equalizeSwiperSlides);
+
+
+    // function too
+    // function myFunction() {
+    //    var element = document.body;
+    //    element.classList.toggle("dark-mode");
+    // }
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            let increment = target / (duration / 16); // Approx. 60 FPS
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.innerText = Math.floor(start); // Rounds down while counting
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.innerText = target + "+"; // Ensure final value includes "+"
+                }
+            }
+    
+            updateCounter();
+        }
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".experience__content-years h3").forEach((h3) => {
+                let target = parseFloat(h3.getAttribute("data-target"));
+                let isPlus = h3.innerText.includes("+"); // Check if original text had "+"
+    
+                if (isPlus) {
+                    h3.setAttribute("data-target", target); // Ensure correct target
+                    animateCounter(h3, target, 10000); // Run animation
+                } else {
+                    animateCounter(h3, target, 10000);
+                }
+            });
+        });
+            var swiper = new Swiper(".testSwiper", {
+                slidesPerView: 2,
+                spaceBetween: 70,
+                // loop: true,
+                // autoplay: {
+                //     delay: 2000, // Delay between slides in milliseconds (3 seconds)
+                //     disableOnInteraction: false, // Keeps autoplay active even after user interaction
+                // },
+                breakpoints: {
+                    360: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 40,
+                    },
+                    992: {
+                        slidesPerView: 1,
+                        spaceBetween: 40,
+                    },
+                    1200:{
+                        slidesPerView: 2,
+                        spaceBetween: 40,
+                    }
+                }
+            });
+            function setEqualHeight() {
+let maxHeight = 0, slides = document.querySelectorAll('.swiper-slide');
+slides.forEach(s => (s.style.height = 'auto', maxHeight = Math.max(maxHeight, s.offsetHeight)));
+slides.forEach(s => s.style.height = maxHeight + 'px');
+}
+
+// Run once and after each slide change
+swiper.on('slideChangeTransitionEnd', setEqualHeight);
+setEqualHeight();
+        
+            function hideLoader() {
+document.getElementById("loader").style.bottom = "100%";
+setTimeout(() => {
+document.getElementById("loader").style.opacity = "0";
+setTimeout(() => {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("content").style.display = "block";
+}, 500);
+}, 1500);
+}
+document.querySelectorAll('.header__right-text a').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+});
+
+        </script>
+        
+    
+    
+
+</body>
+</html>

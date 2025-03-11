@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Slide-In Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: white;
+        }
+
+        .header {
+            background: #181818;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .header__content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header__left a {
+            display: flex;
+            align-items: center;
+        }
+
+        .header__left-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        /* Menu Icon */
+        .menu-icon {
+            display: block;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .menu-icon img {
+            width: 30px;
+        }
+
+        /* Menu Styling */
+        .header__right {
+            position: absolute;
+            top: 80px;
+            right: 0;
+            background: rgba(34, 34, 34, 0.95);
+            flex-direction: column;
+            width: 250px;
+            height: 50vh;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            
+            /* Prevent Overflow */
+            transform: translateX(100%);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            max-width: 0;
+            overflow: hidden;
+            transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out, visibility 0.5s ease-in-out, max-width 0.5s ease-in-out;
+        }
+
+        .header__right.active {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            max-width: 250px;
+            overflow: visible;
+        }
+
+        /* Menu Items */
+        .header__right-text a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .header__right-text a:hover {
+            color: #ff6600;
+        }
+
+        /* Button */
+        .hire {
+            padding: 10px 20px;
+            background: #ff6600;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .menu-icon {
+                display: none; /* Hide menu icon */
+            }
+
+            .header__right {
+                position: static;
+                display: flex;
+                flex-direction: row;
+                background: transparent;
+                box-shadow: none;
+                width: auto;
+                height: auto;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                pointer-events: auto;
+                max-width: none;
+            }
+
+            .header__right-text a {
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__content">
+            <div class="header__left">
+                <a href="mailto:aplanand2001@gmail.com" class="header__link">
+                    <img src="./Assets/images/anand.gif" class="header__left-image">
+                </a>
+            </div>
+
+            <!-- Menu Icon -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <img src="./Assets/images/three-line-horizontal-svgrepo-com.svg" class="header__menu-icon">
+            </div>
+
+            <!-- Menu -->
+            <ul class="header__right">
+                <li class="header__right-text"><a href="#section1" class="header__link">Services</a></li>
+                <li class="header__right-text"><a href="#section2" class="header__link">Skills</a></li>
+                <li class="header__right-text"><a href="#section3" class="header__link">Work</a></li>
+                <li class="header__right-text"><a href="#section4" class="header__link">Career</a></li>
+                <li class="header__right-text"><a href="#section5" class="header__link">Contact</a></li>
+            </ul>
+
+            <a href="mailto:aplanand2001@gmail.com" class="btn--primary hire" target="_blank">Hire Me</a>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector(".header__right");
+            menu.classList.toggle("active");
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+            const menu = document.querySelector(".header__right");
+            const menuIcon = document.querySelector(".menu-icon");
+
+            if (menu.classList.contains("active") && !menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                menu.classList.remove("active");
+            }
+        });
+    </script>
+
+</body>
+</html>
