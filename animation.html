@@ -3,187 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smooth Slide-In Menu</title>
+    <title>Contact Me</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: Arial, sans-serif;
-            background: #121212;
-            color: white;
-        }
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #3a3a58);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-        .header {
-            background: #181818;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            z-index: 1000;
-        }
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
-        .header__content {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+.contact-container {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+}
 
-        .header__left a {
-            display: flex;
-            align-items: center;
-        }
 
-        .header__left-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: none;
+}
 
-        /* Menu Icon */
-        .menu-icon {
-            display: block;
-            cursor: pointer;
-            z-index: 1100;
-        }
+textarea {
+    height: 100px;
+}
 
-        .menu-icon img {
-            width: 30px;
-        }
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
 
-        /* Menu Styling */
-        .header__right {
-            position: absolute;
-            top: 80px;
-            right: 0;
-            background: rgba(34, 34, 34, 0.95);
-            flex-direction: column;
-            width: 250px;
-            height: 50vh;
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-            
-            /* Prevent Overflow */
-            transform: translateX(100%);
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            max-width: 0;
-            overflow: hidden;
-            transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out, visibility 0.5s ease-in-out, max-width 0.5s ease-in-out;
-        }
+button:hover {
+    background-color: #ff4757;
+}
 
-        .header__right.active {
-            transform: translateX(0);
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-            max-width: 250px;
-            overflow: visible;
-        }
+.social-links {
+    margin-top: 20px;
+}
 
-        /* Menu Items */
-        .header__right-text a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 10px;
-            transition: color 0.3s;
-        }
+.social-icon {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
 
-        .header__right-text a:hover {
-            color: #ff6600;
-        }
+.social-icon:hover {
+    color: #ff6b6b;
+}
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4d4d4f;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+}
 
-        /* Button */
-        .hire {
-            padding: 10px 20px;
-            background: #ff6600;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
+.screen-header-left {
+  margin-right: auto;
+}
 
-        /* Desktop Styles */
-        @media (min-width: 768px) {
-            .menu-icon {
-                display: none; /* Hide menu icon */
-            }
+.screen-header-button {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
 
-            .header__right {
-                position: static;
-                display: flex;
-                flex-direction: row;
-                background: transparent;
-                box-shadow: none;
-                width: auto;
-                height: auto;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                pointer-events: auto;
-                max-width: none;
-            }
+.screen-header-button.close {
+  background: #ed1c6f;
+}
 
-            .header__right-text a {
-                padding: 10px 15px;
-            }
-        }
+.screen-header-button.maximize {
+  background: #e8e925;
+}
+
+.screen-header-button.minimize {
+  background: #74c54f;
+}
+
+.screen-header-right {
+  display: flex;
+}
+.screen-header-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init(CONFIG.EMAILJS_USER_ID); 
+        })();
+        
+        function sendMail(event) {
+    event.preventDefault(); 
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value.toLowerCase();
+    let message = document.getElementById("message").value;
+    let messageBox = document.getElementById("thank-you-message");
+
+    if (!name || !email || !message) {
+        messageBox.style.display = "block";
+        messageBox.style.color = "red";
+        messageBox.textContent = "All fields are required!";
+        hideMessage(messageBox); 
+        return;
+    }
+
+    let templateParams = {
+        name: name,
+        email: email,
+        message: message
+    };
+
+    emailjs.send(CONFIG.EMAILJS_SERVICE_ID, CONFIG.EMAILJS_TEMPLATE_ID, templateParams)
+    .then(() => {
+        messageBox.style.display = "block";
+        messageBox.style.color = "green";
+        messageBox.textContent = "Thank you! I'll get in touch soon. 😊";
+        document.getElementById("contact-form").reset(); 
+        hideMessage(messageBox); 
+    }).catch((error) => {
+        messageBox.style.display = "block";
+        messageBox.style.color = "red";
+        messageBox.textContent = "Something went wrong. Please try again!";
+        console.error("Email sending error:", error);
+        hideMessage(messageBox); 
+    });
+}
+
+        
+        function hideMessage(element) {
+            setTimeout(() => {
+                element.style.display = "none";
+            }, 3000);
+        }
+    </script>
 </head>
 <body>
-
-    <header class="header">
-        <div class="header__content">
-            <div class="header__left">
-                <a href="mailto:aplanand2001@gmail.com" class="header__link">
-                    <img src="./Assets/images/anand.gif" class="header__left-image">
-                </a>
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="screen-header">
+                <div class="screen-header-left">
+                  <div class="screen-header-button close"></div>
+                  <div class="screen-header-button maximize"></div>
+                  <div class="screen-header-button minimize"></div>
+                </div>
+                <div class="screen-header-right">
+                  <div class="screen-header-ellipsis"></div>
+                  <div class="screen-header-ellipsis"></div>
+                  <div class="screen-header-ellipsis"></div>
+                </div>
+              </div>
+            <h2>Let's Connect & Create!</h2>
+            <p>Have an idea or just want to say hi? Drop me a message below!</p>
+            <form id="contact-form" onsubmit="sendMail(event)">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="thank-you-message" style="display: none;"></p>
+            <div class="social-links">
+                <a href="#" class="social-icon">🔗 LinkedIn</a>
+                <a href="#" class="social-icon">🐱 GitHub</a>
+                <a href="#" class="social-icon">📧 Email</a>
             </div>
-
-            <!-- Menu Icon -->
-            <div class="menu-icon" onclick="toggleMenu()">
-                <img src="./Assets/images/three-line-horizontal-svgrepo-com.svg" class="header__menu-icon">
-            </div>
-
-            <!-- Menu -->
-            <ul class="header__right">
-                <li class="header__right-text"><a href="#section1" class="header__link">Services</a></li>
-                <li class="header__right-text"><a href="#section2" class="header__link">Skills</a></li>
-                <li class="header__right-text"><a href="#section3" class="header__link">Work</a></li>
-                <li class="header__right-text"><a href="#section4" class="header__link">Career</a></li>
-                <li class="header__right-text"><a href="#section5" class="header__link">Contact</a></li>
-            </ul>
-
-            <a href="mailto:aplanand2001@gmail.com" class="btn--primary hire" target="_blank">Hire Me</a>
         </div>
-    </header>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector(".header__right");
-            menu.classList.toggle("active");
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener("click", function (event) {
-            const menu = document.querySelector(".header__right");
-            const menuIcon = document.querySelector(".menu-icon");
-
-            if (menu.classList.contains("active") && !menu.contains(event.target) && !menuIcon.contains(event.target)) {
-                menu.classList.remove("active");
-            }
-        });
-    </script>
-
+    </section>
 </body>
 </html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="config.js"></script>
+    <style>
+        .contact__cards{display: grid;grid-template-columns: 40% 50%;gap: 10%;}
+    .contact__form-header {display: flex;align-items: center;padding: 10px 20px;background: #4d4d4f;border-top-left-radius: 15px;border-top-right-radius: 15px;}
+.contact__form-header-left {margin-right: auto;}
+.contact__form-header-button {display: inline-block;width: 8px;height: 8px;margin-right: 3px;border-radius: 8px;background: white;}
+.contact__form-header-button.close {background: #ed1c6f;}
+.contact__form-header-button.maximize {background: #e8e925;}
+.contact__form-header-button.minimize {background: #74c54f;}
+.contact__form-header-right {display: flex;}
+.contact__form-ellipsis {width: 3px;height: 3px;margin-left: 2px;border-radius: 8px;background: #999;}
+.contact__form-content{text-align: center;color: #fff;background-color: black;padding: 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;box-shadow: 0 20px 40px rgba(0, 0, 0, .4);}
+.contact__form-content h2{margin-top: 0;}
+input, textarea {
+    width: 50%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: none;
+}
+.contact-form{display: flex;flex-direction: column;align-items: center;}
+.form__thankyou{color: #fff;}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contact__cards">
+            <div class="contact__form">
+                <div class="contact__form-header">
+                    <div class="contact__form-header-left">
+                      <span class="contact__form-header-button close"></span>
+                      <span class="contact__form-header-button maximize"></span>
+                      <span class="contact__form-header-button minimize"></span>
+                    </div>
+                    <div class="contact__form-header-right">
+                      <span class="contact__form-ellipsis"></span>
+                      <spanv class="contact__form-ellipsis"></span>
+                      <span class="contact__form-ellipsis"></span>
+                    </div>
+                  </div>
+                  <div class="contact__form-content">
+                  <h2>Let's Connect & Create!</h2>
+                  <p>Have an idea or just want to say hi? Drop me a message below!</p>
+                    <form id="contact-form" onsubmit="sendMail(event)" class="contact-form">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn--primary">Send Message</button>
+                    </form>
+                    <p id="thank-you-message" style="display: none;" class="form__thankyou"></p>
+                    </div>
+            </div>
+            <div class="contact__card">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init(CONFIG.EMAILJS_USER_ID); 
+        })();
+        
+        function sendMail(event) {
+    event.preventDefault(); 
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value.toLowerCase();
+    let message = document.getElementById("message").value;
+    let messageBox = document.getElementById("thank-you-message");
+
+    if (!name || !email || !message) {
+        messageBox.style.display = "block";
+        messageBox.style.color = "red";
+        messageBox.textContent = "All fields are required!";
+        hideMessage(messageBox); 
+        return;
+    }
+
+    let templateParams = {
+        name: name,
+        email: email,
+        message: message
+    };
+
+    emailjs.send(CONFIG.EMAILJS_SERVICE_ID, CONFIG.EMAILJS_TEMPLATE_ID, templateParams)
+    .then(() => {
+        messageBox.style.display = "block";
+        messageBox.style.color = "green";
+        messageBox.textContent = "Thank you! I'll get in touch soon. 😊";
+        document.getElementById("contact-form").reset(); 
+        hideMessage(messageBox); 
+    }).catch((error) => {
+        messageBox.style.display = "block";
+        messageBox.style.color = "red";
+        messageBox.textContent = "Something went wrong. Please try again!";
+        console.error("Email sending error:", error);
+        hideMessage(messageBox); 
+    });
+}
+
+        
+        function hideMessage(element) {
+            setTimeout(() => {
+                element.style.display = "none";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
