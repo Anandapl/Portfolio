@@ -29,7 +29,9 @@
             </div>
 
             <!-- Menu Icon -->
-            <div class="menu-icon" onclick="toggleMenu()">
+             <!-- Menu Icon -->
+
+            <div class="menu-icon" onclick="toggleMenu()" aria-label="Toggle menu">
                 <img src="images/three-line-horizontal-svgrepo-com.svg" class="header__menu-icon">
             </div>
 
@@ -60,7 +62,7 @@
                 As a Web Developer, I turn ideas into beautifully crafted, high-performing websites and applications.
             </p>
             <div class="portfolio__redirect-links">
-            <a href="Anand.L (1).pdf" class="btn--primary btn-style509" download="Anand" target="_blank">Download CV</a>
+            <a href="Anand_Resume.pdf" class="btn--primary btn-style509" download="Anand" target="_blank">Download CV</a>
             <div class="redirect__external-links">
                 <a href="#" class="redirect__link btn--primary"><span class="redirect__icon"></span></a></li>
                 <a href="#" class="redirect__link btn--primary"><span class="redirect__icon-linkedin"></span></a></li>
@@ -77,7 +79,7 @@
 <div class="container">
     <div class="experience__content">
         <div class="experience__content-years">
-            <h3 data-target="1.5">0</h3>
+            <h3 data-target="2">0</h3>
             <p>years of experience</p>
         </div>
         <div class="experience__content-years">
@@ -241,6 +243,41 @@
             </div>
         
         </div>
+            <div class="skills__card">
+            <span class="close"></span>
+            <span class="arrow"></span>
+            <div class="skills__card-content">
+            <h2>React</h2>
+            <div class="pic"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" /></div>
+        
+            <div class="desc">I have hands-on experience building dynamic and responsive user interfaces using React. I work with functional components, hooks like useState and useEffect, and focus on reusable component design. I also handle API integration, state management, and performance optimization to create smooth user experiences</div>
+        
+            </div>
+            
+        </div>
+            <div class="skills__card">
+            <span class="close"></span>
+            <span class="arrow"></span>
+            <div class="skills__card-content">
+            <h2>MongoDb</h2>
+            <div class="pic"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" /></div>
+        
+            <div class="desc">I have a basic understanding of MongoDB and NoSQL database concepts. I can design simple schemas, perform CRUD operations, and work with collections using JSON-like documents. I use MongoDB for storing and managing application data in backend projects.</div>
+        
+            </div>
+            
+        </div>
+            <div class="skills__card">
+            <span class="close"></span>
+            <span class="arrow"></span>
+            <div class="skills__card-content">
+            <h2>Node.js</h2>
+            <div class="pic"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" /></div>
+        
+            <div class="desc">I have experience using Node.js to build backend services and APIs. I understand core concepts like asynchronous programming, event-driven architecture, and working with Express.js. I use Node.js to handle server-side logic, API creation, and integration with databases.</div>
+            </div>
+            
+        </div>
         </div>
 
 </div>
@@ -316,7 +353,7 @@
         </h1>
     </div>
     <div class="career__cards">
-        <h3>2023 - Present</h4>
+        <h3>2023 - 2025</h4>
             <h4>Blueoshan</h4>  
             <h6>Chennai</h6> 
     </div>
@@ -369,7 +406,7 @@
     </div>
 </div>
 </section>
-<div class="container">
+<!-- <div class="container">
     <div class="container__item">
 		<form class="form" onsubmit="sendMail(event)" id="contact-form">
 			<input type="email" id="email" class="form__field" placeholder="Your E-Mail Address" />
@@ -381,7 +418,39 @@
 	<div class="container__item container__item--bottom">
 		
 	</div>
-</div>
+</div> -->
+
+
+<div class="container">
+        <div class="contact__fotm-cards">
+            <div class="contact__form">
+                <div class="contact__form-header">
+                    <div class="contact__form-header-left">
+                      <span class="contact__form-header-button close"></span>
+                      <span class="contact__form-header-button maximize"></span>
+                      <span class="contact__form-header-button minimize"></span>
+                    </div>
+                    <div class="contact__form-header-right">
+                      <span class="contact__form-ellipsis"></span>
+                      <spanv class="contact__form-ellipsis"></span>
+                      <span class="contact__form-ellipsis"></span>
+                    </div>
+                  </div>
+                  <div class="contact__form-content">
+                  <h2>Let's Connect & Create!</h2>
+                  <p class="contact__form-desc">Have an idea or just want to say hi? Drop me a message below!</p>
+                    <form id="contact-form" onsubmit="sendMail(event)" class="contact-form">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn--primary">Send Message</button>
+                    </form>
+                    <p id="thank-you-message" style="display: none;" class="form__thankyou"></p>
+                    </div>
+            </div>
+         
+        </div>
+    </div>
 <footer class="footer">
 <div class="container">
     <ul class="footer__content">
@@ -413,30 +482,29 @@
     }
     function toggleMenu() {
     const menu = document.querySelector(".header__right");
-    const menuIcon = document.querySelector(".menu-icon img");
-
+    const icon = document.querySelector(".menu-icon");
     menu.classList.toggle("active");
-
-    // Toggle menu icon image
-    if (menu.classList.contains("active")) {
-        menuIcon.src = "./Assets/images/close-icon.svg"; // Change to close icon
-    } else {
-        menuIcon.src = "./images/three-line-horizontal-svgrepo-com.svg"; // Back to menu icon
-    }
+    icon.classList.toggle("active");
 }
 
 // Close menu when clicking outside
 document.addEventListener("click", function (event) {
     const menu = document.querySelector(".header__right");
-    const menuIcon = document.querySelector(".menu-icon img");
+    const icon = document.querySelector(".menu-icon");
     const menuContainer = document.querySelector(".menu-icon");
-
     if (menu.classList.contains("active") && !menu.contains(event.target) && !menuContainer.contains(event.target)) {
         menu.classList.remove("active");
-        menuIcon.src = "./Assets/images/three-line-horizontal-svgrepo-com.svg"; // Reset icon to menu
+        icon.classList.remove("active");
     }
 });
 
+// Close menu when a nav link is clicked
+document.querySelectorAll(".header__right-text a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.querySelector(".header__right").classList.remove("active");
+        document.querySelector(".menu-icon").classList.remove("active");
+    });
+});
 
 function equalizeSwiperSlides() {
     let slides = document.querySelectorAll(".swiper-slide");
